@@ -1,0 +1,27 @@
+Question 1
+a. 
+
+Get-Process | Where-Object {$_.WS -gt 51200000}
+
+b. 
+
+Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'" | Foreach-Object {$_.FreeSpace}
+
+c. 
+
+Get-WmiObject -Class Win32_BIOS | Foreach-Object {$_.SMBIOSBIOSVersion}
+
+d. 
+
+Array uses numeric indexing to address objects stored inside it, while Hashatble uses assigned 
+keys to address objects.
+
+e. 
+
+Get-Service | Sort-Object status | Format-Table name, status -GroupBy Status
+
+f. 
+
+New-TimeSpan -Start (get-date) -End 25/12/2015 | Foreach-Object {$_.Days}
+
+
